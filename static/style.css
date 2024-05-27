@@ -1,0 +1,20 @@
+ .maindiv{
+    display:block;
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 40%;
+    margin: auto;
+    
+ }
+
+  .title-div{
+    align-items: center;
+    text-align: center;
+    
+ } 
+
+ .formDiv{
+   justify-content: center;
+   align-items: center;
+   width: 60%;
+ }
