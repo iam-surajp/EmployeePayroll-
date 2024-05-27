@@ -3,68 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/style.css">
+    <!-- <link rel="stylesheet" href="/static/style.css"> -->
     <title>Document</title>
+    <style>
+         .maindiv{
+    display:flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    /* width: 40%; */
 
+    
+ }
+
+  .title-div{
+    align-items: center;
+    text-align: center;
+    color: rgb(31, 157, 199);
+    
+ } 
+
+ .formDiv{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: rgb(222, 222, 222);
+   /* padding: 5%; */
+   padding-top: 5px;
+   width: 100%;
+ }
+ form{
+    /* width: 50%; */
+    background-color: white;
+    padding-left: 8%;
+    padding-bottom: 2%;
+    justify-content: center;
+    /* align-content: center; */
+    width: 50%;
+    margin: 30px;
+
+ }
+ label{
+    width: 150px;
+    display: inline-block;
+
+ }
+
+ .formEmpName{
+    width: 60%;
+    height: 30px;
+ }
+
+ img{
+    width: 30px;
+    border-radius: 50%;
+ }
+
+ .formDate{
+    width: 14%;
+    height: 30px;
+    margin-right: 10px;
+ }
+
+ .formDept{
+    /* width: 8%; */
+    /* height: 5px; */
+    margin: 15px;
+    
+ }
+
+ .formSalary{
+    width: 14%;
+    height: 30px;
+ }
+
+ .formNote{
+    width: 60%;
+    height: 50px;
+ }
+
+ .divButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+ }
+
+ .clbutton{
+    width: 20%;
+    height: 35px;
+ }
+
+button{
+    margin-right: 5px;
+}
+
+#cancelButton{
+    margin-right: 130px;
+}
+
+ /* .resetsubmitbut{
+    display: flex;
+    justify-content: flex-end;
+ } */
+
+
+    </style>
 </head>
 <body>
     <div class="maindiv">
-       <div class="title-div"> 
-                <h1>
-                    <u>Add Employee Payroll UI/UX Design</u>
-                </h1>     
+       <div class="title-div" style="display: flex;justify-content: space-between;"> 
+            <h4>EMPLOYEE PAYROLL</h4>      
+            <h1>
+                <u>Add Employee Payroll UI/UX Design</u>
+            </h1>    
        </div>
         <div class="formDiv">
             <form action="">
-                <h4>Employee Payroll Form</h4><br>
+                <h3>Employee Payroll Form</h3><br>
                 <label for="name">Name</label>
-                <input type="text" name="name"><br><br><br>
+                <input type="text" name="name" class="formEmpName">
+                <br><br><br>
                 <label for="profile_pic">Profile Photo</label>
-                <input type="radio" name="profile_pic">
-                <input type="radio" name="profile_pic">
-                <input type="radio" name="profile_pic">
-                <input type="radio" name="profile_pic"><br><br><br>
+                <input type="radio" name="profile_pic" id="first_img">
+                <img src="https://dentalia.orionthemes.com/demo-1/wp-content/uploads/2016/10/dentalia-demo-deoctor-3-1-750x750.jpg" alt="img" id="first_img">
+                <input type="radio" name="profile_pic" id="second_img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm47XQvdo3l5cTpQjf2a5yNm7DsW4aENh65hKkf7gMJA&s" alt="img" id="second_img">
+                <input type="radio" name="profile_pic" id="third_img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeGXu2aNx8aAXWKgva_gjaKtHrVvp8aLjd_Yi0dRlLmA&s" alt="img" id="third_img">  
+                <input type="radio" name="profile_pic" id="fourth_img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWWhdy5cHpAf-ERlSnLc0-iX7B470mSw8GOpES67sCQA&s" alt="img" id="fourth_img">
+                <br><br><br>
+
                 <label for="gender">Gender</label>
                 <input type="radio" name="gender" value="Male">Male
-                <input type="radio" name="gender" value="Female">Female</div><br><br><br>
+                <input type="radio" name="gender" value="Female">Female
+                <br><br><br>
                 <label for="dept">Department</label>
-                <input type="checkbox" name="dept"/>HR
-                <input type="checkbox" name="dept"/>Sales
-                <input type="checkbox" name="dept"/>Finance
-                <input type="checkbox" name="dept"/>Engineer
-                <input type="checkbox" name="dept"/>Others<br><br><br>
+                <input type="checkbox" name="dept" class="formDept"/>HR
+                <input type="checkbox" name="dept" class="formDept"/>Sales
+                <input type="checkbox" name="dept" class="formDept"/>Finance
+                <input type="checkbox" name="dept" class="formDept"/>Engineer
+                <input type="checkbox" name="dept" class="formDept"/>Others<br><br><br>
                 <label for="salary">Salary</label>
-                <select name="salary">
+                <select name="salary" class="formSalary">
                     <option value="">Select Salary</option><br><br><br>
                     <option value="">20000</option><br>
                     <option value="">30000</option><br>
                     <option value="">40000</option><br>
                 </select><br><br><br>
                 <label for="startdate">Start Date</label>
-                <select name="startdate">
+                <select name="startdate" class="formDate">
                     <option value="">Day</option>
                     <option value="">1</option>
                     <option value="">2</option>
                     <option value="">3</option>
                 </select>
-                <select name="startdate">
+                <select name="startdate" class="formDate">
                     <option value="">Month</option>
                     <option value="">1</option>
                     <option value="">2</option>
                     <option value="">3</option>
                 </select>
-                <select name="startdate">
+                <select name="startdate" class="formDate">
                     <option value="">Year</option>
                     <option value="">1990</option>
                     <option value="">1991</option>
                     <option value="">1992</option>
                 </select><br><br>
                 <label for="note">Notes</label>
-                <textarea name="note" id=""></textarea><br><br>
-                <div class="submitResetBut">
-                    <button>Cancel</button>
-                   <button>Submit</button>
-                   <button>Reset</button>
+                <textarea name="note" class="formNote"></textarea><br><br>
+                
+                    <button class="clbutton" id="cancelButton">Cancel</button>
+                   <button class="clbutton">Submit</button>
+                   <button class="clbutton">Reset</button>
+                
                 </div>
             </form>
          </div>
