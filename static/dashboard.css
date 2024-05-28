@@ -18,7 +18,7 @@ justify-content: center;
 
 header {
 background-color: #ffffff;
-padding: 20px;
+padding: 10px;
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -48,14 +48,9 @@ text-decoration: none;
 color: #007bff;
 }
 
-.employee-details {
-/* padding: 20px; */
-}
-
 .employee-details h3 {
 margin-top: 0;
 font-size: 20px;
-/* padding-bottom: 10px; */
 }
 
 .search-add {
@@ -123,26 +118,19 @@ border-radius: 10px;
 margin-right: 5px;
 }
 
-/* table td img[alt="Edit"] {
-cursor: pointer;
-} */
-
 .employee-details{
-width: 70%;
+width: 80%;
 margin: auto;
 margin-top: 0;
 margin-bottom: 0;
-
 }
 
 .tablediv{
-width: 70%;
+width: 80%;
 margin: auto;
-
 padding: 0;
 margin-top: 0;
 justify-content: center;
-/* background-color: rgb(255, 255, 255); */
 }
 
 .div-content{
