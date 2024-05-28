@@ -17,9 +17,11 @@
  }
 
   .title-div{
-    align-items: center;
-    text-align: center;
-    color: rgb(31, 157, 199);
+    /* align-items: center; */
+    /* text-align: center; */
+    height:5%;
+    width:70%;
+    padding-top: 10px;
     
  } 
 
@@ -29,8 +31,10 @@
    align-items: center;
    background-color: rgb(222, 222, 222);
    /* padding: 5%; */
-   padding-top: 5px;
+   /* padding-top: 5px; */
    width: 100%;
+   height: 100vh;
+   margin: 0px;
  }
  form{
     /* width: 50%; */
@@ -40,7 +44,8 @@
     justify-content: center;
     /* align-content: center; */
     width: 50%;
-    margin: 30px;
+    /* height: 60%; */
+    margin: 0;
 
  }
  label{
@@ -57,6 +62,7 @@
  img{
     width: 30px;
     border-radius: 50%;
+    /* margin-top: 10px; */
  }
 
  .formDate{
@@ -100,6 +106,7 @@ button{
 
 #cancelButton{
     margin-right: 130px;
+    margin-top: 20px;
 }
 
  /* .resetsubmitbut{
@@ -107,47 +114,51 @@ button{
     justify-content: flex-end;
  } */
 
+ .prof_pic{
+   /* margin-bottom: 50px; */
+ }
 
     </style>
 </head>
 <body>
     <div class="maindiv">
-       <div class="title-div" style="display: flex;justify-content: space-between;"> 
-            <h4>EMPLOYEE PAYROLL</h4>      
-            <h1>
+       <div class="title-div" style="display: flex;"> 
+            <img src="/assets/empLogo.jpg" alt="EmpLogo" style="width: 40px;height: 35px;margin:0;">
+            <h5 style="margin: 0;">EMPLOYEE <br>PAYROLL</h5>      
+            <h2 style="margin: 0;margin-left: 250px;color: rgb(31, 157, 199);">
                 <u>Add Employee Payroll UI/UX Design</u>
-            </h1>    
+            </h2>    
        </div>
         <div class="formDiv">
             <form action="">
                 <h3>Employee Payroll Form</h3><br>
                 <label for="name">Name</label>
                 <input type="text" name="name" class="formEmpName">
-                <br><br><br>
+                <br><br>
                 <label for="profile_pic">Profile Photo</label>
-                <input type="radio" name="profile_pic" id="first_img">
+                <input type="radio" name="profile_pic" id="first_img" class="prof_pic">
                 <img src="https://dentalia.orionthemes.com/demo-1/wp-content/uploads/2016/10/dentalia-demo-deoctor-3-1-750x750.jpg" alt="img" id="first_img">
-                <input type="radio" name="profile_pic" id="second_img">
+                <input type="radio" name="profile_pic" id="second_img" class="prof_pic">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm47XQvdo3l5cTpQjf2a5yNm7DsW4aENh65hKkf7gMJA&s" alt="img" id="second_img">
-                <input type="radio" name="profile_pic" id="third_img">
+                <input type="radio" name="profile_pic" id="third_img" class="prof_pic">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeGXu2aNx8aAXWKgva_gjaKtHrVvp8aLjd_Yi0dRlLmA&s" alt="img" id="third_img">  
-                <input type="radio" name="profile_pic" id="fourth_img">
+                <input type="radio" name="profile_pic" id="fourth_img" class="prof_pic">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWWhdy5cHpAf-ERlSnLc0-iX7B470mSw8GOpES67sCQA&s" alt="img" id="fourth_img">
                 <br><br><br>
 
                 <label for="gender">Gender</label>
                 <input type="radio" name="gender" value="Male">Male
                 <input type="radio" name="gender" value="Female">Female
-                <br><br><br>
+                <br><br>
                 <label for="dept">Department</label>
                 <input type="checkbox" name="dept" class="formDept"/>HR
                 <input type="checkbox" name="dept" class="formDept"/>Sales
                 <input type="checkbox" name="dept" class="formDept"/>Finance
                 <input type="checkbox" name="dept" class="formDept"/>Engineer
-                <input type="checkbox" name="dept" class="formDept"/>Others<br><br><br>
+                <input type="checkbox" name="dept" class="formDept"/>Others<br><br>
                 <label for="salary">Salary</label>
                 <select name="salary" class="formSalary">
-                    <option value="">Select Salary</option><br><br><br>
+                    <option value="">Select Salary</option><br><br>
                     <option value="">20000</option><br>
                     <option value="">30000</option><br>
                     <option value="">40000</option><br>
@@ -171,7 +182,7 @@ button{
                     <option value="">1991</option>
                     <option value="">1992</option>
                 </select><br><br>
-                <label for="note">Notes</label>
+                <label for="note" style="">Notes</label>
                 <textarea name="note" class="formNote"></textarea><br><br>
                 
                     <button class="clbutton" id="cancelButton">Cancel</button>
