@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Payroll UI/UX Design</title>
+    <link rel="stylesheet" href="/static/dashboard.css">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content" style="display: flex;justify-content: center;width: 80%;">
+            <div class="logo" style="margin-right: 100px;">
+                <img src="/assets/empLogo.jpg" alt="Employee Payroll">
+                <h4>EMPLOYEE <br>PAYROLL</h4>
+            </div>
+            <h2 style="color: #36b8e3;text-decoration: underline;">Employee Payroll UI/UX Design</h2>
+           </div>  
+          
+        </header>
+        <main>
+          <div class="div-content">
+            <div class="employee-details">
+                <div class="search-add" style="display: flex;justify-content: flex-end;">
+                    <span style="margin-right: 450px;margin-top: 20px;"><h3>Employee Details</h3></span>
+                    <span><input type="text" placeholder="Search..." style="margin-left: 150px;height: 15px;"></span>
+                    <span><a style="width: 30px;border-radius: 30%;height: 30px;border: none;margin-right: 20px;"><img src="/assets/search.png" alt="" style="width: 40px;height: 30px;border-radius: 30%;"></a></span>
+                    <span><button class="add-user">+ Add User</button></span>             
+                </div>
+            </div>
+            <div class="tablediv">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="thead"></th>
+                            <th class="thead">NAME</th>
+                            <th class="thead">GENDER</th>
+                            <th class="thead">DEPARTMENT</th>
+                            <th class="thead">SALARY</th>
+                            <th class="thead">START DATE</th>
+                            <th class="thead">ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="profile1.png" alt="Profile"></td>
+                            <td>Shivani Patil</td>
+                            <td>Female</td>
+                            <td><span class="tag">Sales</span> <span class="tag">Finance</span></td>
+                            <td>₹ 10,000</td>
+                            <td>29 Oct 2019</td>
+                            <td>add/delete</td>
+                        </tr>
+                        <tr>
+                            <td><img src="profile1.png" alt="Profile"></td>
+                            <td>Shivani Patil</td>
+                            <td>Female</td>
+                            <td><span class="tag">Sales</span> <span class="tag">Finance</span></td>
+                            <td>₹ 10,000</td>
+                            <td>29 Oct 2019</td>
+                            <td>add/delete</td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>              
+            </div>
+        </main>
+    </div>
+</body>
+</html>
