@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/payrollForm.css">
     <title>Document</title>
-
 </head>
 <body>
     <div class="maindiv">
-       <div class="title-div" style="display: flex;"> 
-            <img src="/assets/empLogo.jpg" alt="EmpLogo" style="width: 40px;height: 35px;margin:0;">
-            <h5 style="margin: 0;">EMPLOYEE <br>PAYROLL</h5>      
-            <h2 style="margin: 0;margin-left: 250px;color: rgb(31, 157, 199);">
+       <div class="title-div" style="display: flex;margin-top: 10px;"> 
+            <img src="/assets/empLogo.jpg" alt="EmpLogo" style="width: 40px;height: 35px;margin-top: 20px;margin-left: 50px;">
+            <h4 ><span style="color: #739a36;">EMPLOYEE</span><br>
+                <span>PAYROLL</span></h4>   
+            <h2 style="margin-left:200px;color: rgb(31, 157, 199);">
                 <u>Add Employee Payroll UI/UX Design</u>
             </h2>    
        </div>
@@ -22,16 +22,18 @@
                 <label for="name">Name</label>
                 <input type="text" name="name" class="formEmpName">
                 <br><br>
+                <div class="profInp" style="display: flex;align-items: center;">
                 <label for="profile_pic">Profile Photo</label>
-                <input type="radio" name="profile_pic" id="first_img" class="prof_pic">
-                <img src="https://dentalia.orionthemes.com/demo-1/wp-content/uploads/2016/10/dentalia-demo-deoctor-3-1-750x750.jpg" alt="img" id="first_img">
-                <input type="radio" name="profile_pic" id="second_img" class="prof_pic">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm47XQvdo3l5cTpQjf2a5yNm7DsW4aENh65hKkf7gMJA&s" alt="img" id="second_img">
-                <input type="radio" name="profile_pic" id="third_img" class="prof_pic">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeGXu2aNx8aAXWKgva_gjaKtHrVvp8aLjd_Yi0dRlLmA&s" alt="img" id="third_img">  
-                <input type="radio" name="profile_pic" id="fourth_img" class="prof_pic">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWWhdy5cHpAf-ERlSnLc0-iX7B470mSw8GOpES67sCQA&s" alt="img" id="fourth_img">
-                <br><br><br>
+                <input type="radio" name="profile_pic" id="first_img">
+                <img src="https://dentalia.orionthemes.com/demo-1/wp-content/uploads/2016/10/dentalia-demo-deoctor-3-1-750x750.jpg" alt="img" id="first_img" class="prof_pic">
+                <input type="radio" name="profile_pic" id="second_img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm47XQvdo3l5cTpQjf2a5yNm7DsW4aENh65hKkf7gMJA&s" alt="img" id="second_img" class="prof_pic">
+                <input type="radio" name="profile_pic" id="third_img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeGXu2aNx8aAXWKgva_gjaKtHrVvp8aLjd_Yi0dRlLmA&s" alt="img" id="third_img" class="prof_pic">  
+                <input type="radio" name="profile_pic" id="fourth_img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWWhdy5cHpAf-ERlSnLc0-iX7B470mSw8GOpES67sCQA&s" alt="img" id="fourth_img" class="prof_pic">
+                </div>
+                <br><br>
 
                 <label for="gender">Gender</label>
                 <input type="radio" name="gender" value="Male">Male
@@ -69,9 +71,10 @@
                     <option value="">1991</option>
                     <option value="">1992</option>
                 </select><br><br>
-                <label for="note" style="">Notes</label>
-                <textarea name="note" class="formNote"></textarea><br><br>
-                
+                <div class="notediv" style="display: flex;align-items: center;">
+                    <label for="note">Notes</label>
+                    <textarea name="note" class="formNote"></textarea><br><br>
+                </div>
                     <button class="clbutton" id="cancelButton">Cancel</button>
                    <button class="clbutton">Submit</button>
                    <button class="clbutton">Reset</button>
