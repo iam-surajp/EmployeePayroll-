@@ -8,6 +8,12 @@
 
 </head>
 <body>
+
+   <script>
+    const element = document.getElementById("first_row");
+    element.parentNode.removeChild(element);
+   </script>
+
     <div class="container">
         <header>
             <div class="header-content" style="display: flex;justify-content: center;width: 80%;height: 20%;">
@@ -18,7 +24,6 @@
             </div>
             <h2 style="color: #36b8e3;text-decoration: underline;margin-right: 200px;">Employee Payroll UI/UX Design</h2>
            </div>  
-          
         </header>
         <main>
           <div class="div-content">
@@ -27,7 +32,7 @@
                     <span style="margin-right: 540px;margin-top: 20px;"><h3>Employee Details</h3></span>
                     <span><input type="text" placeholder="Search..." style="margin-left: 150px;height: 15px;"></span>
                     <span><a style="width: 30px;border-radius: 30%;height: 30px;border: none;margin-right: 20px;"><img src="/assets/search.png" alt="" style="width: 40px;height: 30px;border-radius: 30%;"></a></span>
-                    <span><button class="add-user">+ Add User</button></span>             
+                    <span><button class="add-user" ><a href="/pages/payrollForm.html" style="text-decoration: none;color: white;">+ Add User</a></button></span>             
                 </div>
             </div>
             <div class="tablediv">
@@ -44,15 +49,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr id="first_row">
                             <td class="prof-img" style="width: 7%;"><img src="https://dentalia.orionthemes.com/demo-1/wp-content/uploads/2016/10/dentalia-demo-deoctor-3-1-750x750.jpg" alt="Profile" style="border-radius: 40%;"></td>
                             <td>Govind Patidar</td>
                             <td>Female</td>
                             <td><span class="tag">Sales</span> <span class="tag">Finance</span></td>
                             <td>₹ 10,000</td>
                             <td>29 Oct 2019</td>
-                            <td><span><a href=""><img src="/assets/delet.png" alt=""></a></span>
-                            <span><a href=""><img src="/assets/edit.png" alt=""></a></span>
+                            <td><span><a href="" class="delete-row"><img src="/assets/delet.png" alt=""></a></span>
+                            <span><a href="/pages/payrollForm.html?id=1" class="edit-row"><img src="/assets/edit.png" alt=""></a></span>
                             </td>
                         </tr>
                         <tr>
@@ -62,8 +67,8 @@
                             <td><span class="tag">Sales</span> <span class="tag">Finance</span></td>
                             <td>₹ 10,000</td>
                             <td>29 Oct 2019</td>
-                            <td><span><a href=""><img src="/assets/delet.png" alt=""></a></span>
-                                <span><a href=""><img src="/assets/edit.png" alt=""></a></span>
+                            <td><span><a href="" class="delete-row"><img src="/assets/delet.png" alt=""></a></span>
+                                <span><a href="/pages/payrollForm.html?id=2" class="edit-row"><img src="/assets/edit.png" alt=""></a></span>
                                 </td>
                         </tr>
                         <tr>
@@ -73,8 +78,8 @@
                             <td><span class="tag">Sales</span> <span class="tag">Finance</span></td>
                             <td>₹ 10,000</td>
                             <td>29 Oct 2019</td>
-                            <td><span><a href=""><img src="/assets/delet.png" alt=""></a></span>
-                                <span><a href=""><img src="/assets/edit.png" alt=""></a></span>
+                            <td><span><a href="" class="delete-row"><img src="/assets/delet.png" alt=""></a></span>
+                                <span><a href="" class="edit-row"><img src="/assets/edit.png" alt=""></a></span>
                                 </td>
                         </tr>
                         <tr>
@@ -84,8 +89,8 @@
                             <td><span class="tag">Sales</span> <span class="tag">Finance</span></td>
                             <td>₹ 10,000</td>
                             <td>29 Oct 2019</td>
-                            <td><span><a href=""><img src="/assets/delet.png" alt=""></a></span>
-                                <span><a href=""><img src="/assets/edit.png" alt=""></a></span>
+                            <td><span><a href="" class="delete-row"><img src="/assets/delet.png" alt="" id="deleteRec"></a></span>
+                                <span><a href="" class="edit-row"><img src="/assets/edit.png" alt="" id="editRec"></a></span>
                                 </td>
                         </tr>
                         <tr>
@@ -95,8 +100,8 @@
                             <td><span class="tag">IT</span> <span class="tag">Finance</span></td>
                             <td>₹ 10,000</td>
                             <td>29 Oct 2019</td>
-                            <td><span><a href=""><img src="/assets/delet.png" alt=""></a></span>
-                                <span><a href=""><img src="/assets/edit.png" alt=""></a></span>
+                            <td><span><a href="" class="delete-row"><img src="/assets/delet.png" alt=""></a></span>
+                                <span><a href="" class="edit-row"><img src="/assets/edit.png" alt=""></a></span>
                                 </td>
                         </tr>
                     </tbody>
@@ -105,5 +110,8 @@
             </div>
         </main>
     </div>
+
+        <!-- Link to the external JavaScript file -->
+        <script src="/js/script.js"></script>
 </body>
 </html>
