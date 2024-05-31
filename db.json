@@ -1,0 +1,20 @@
+{
+  "employees": [
+    {
+      "id": "5db1",
+      "name": "sdfdf",
+      "profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm47XQvdo3l5cTpQjf2a5yNm7DsW4aENh65hKkf7gMJA&s",
+      "gender": "Female",
+      "department": [
+        "Sales",
+        "Finance"
+      ],
+      "salary": "30000",
+      "startdate": {
+        "day": "17",
+        "month": "10",
+        "year": "2022"
+      }
+    }
+  ]
+}

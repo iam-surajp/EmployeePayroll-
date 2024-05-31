@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', function () {
     
     deleteLinks.forEach(link => {
         link.addEventListener('click', function (event) {
-            event.preventDefault();  // Prevent the default action of the anchor tag
-            const row = this.closest('tr');  // Find the closest table row
+            event.preventDefault();  
+            const row = this.closest('tr');  
             if (row) {
-                row.remove();  // Remove the row from the table
+                row.remove();  
             }
         });
     });
@@ -41,4 +41,47 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelector('textarea[name="note"]').value = employee.note;
         }
     }
+});
+
+
+$(document).ready(function(){
+    $('#myForm').on('submit',function(e){
+        e.preventDefault() // prevent default form submission
+
+        // collect form data
+        var formData = {
+            name:$('#name').val(),
+            profile_pic: $('input[name="profile_pic"]:checked').val(),  //get value of checked radio button
+            gender:$('input[name="gender"]:checked').val(),
+            department:[],
+            salary:$('select[name="salary"]').val(),
+            startdate:{
+                day:$('select[name="startdate"]').eq(0).val(),
+                month:$('select[name="startdate"]').eq(1).val(),
+                year:$('select[name="startdate"]').eq(2).val(),
+            },
+            note:$('textarea[name="textarea"]').val(),
+        };
+
+        // Get all checked departments
+        $('input[name="dept"]:checked').each(function() {
+            formData.department.push($(this).val());
+        });
+
+        // Send data to the JSON server
+        $.ajax({
+            url: 'http://localhost:3000/employees', // URL of JSON server endpoint
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(formData),
+            success: function(response) {
+                console.log('Data successfully sent to the server:', response);
+                alert('Employee added successfully');
+            },
+            error: function(error) {
+                console.error('Error sending data:', error);
+                alert('Error adding employee');
+            }
+        });
+    });
 });
