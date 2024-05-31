@@ -17,20 +17,18 @@
       "note": "good employee"
     },
     {
-      "id": "3df3",
-      "name": "akash",
-      "profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeGXu2aNx8aAXWKgva_gjaKtHrVvp8aLjd_Yi0dRlLmA&s",
-      "gender": "Male",
-      "department": [
-        "Sales"
-      ],
-      "salary": "20,000",
+      "id": "d6c3",
+      "name": "ggfjfjf",
+      "profile_pic": "/assets/images (2).jpg",
+      "gender": "Female",
+      "department": [],
+      "salary": "40,000",
       "startdate": {
-        "day": "18",
-        "month": "Jun",
-        "year": "2019"
+        "day": "19",
+        "month": "Oct",
+        "year": "2021"
       },
-      "note": "qazxsw"
+      "note": "fhtytfj"
     }
   ]
 }

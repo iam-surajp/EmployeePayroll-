@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/payrollForm.css">
-    <title>Add employee</title>
+    <title>Update employee</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
@@ -14,7 +14,7 @@
             <h4 ><span style="color: #739a36;">EMPLOYEE</span><br>
                 <span>PAYROLL</span></h4>   
             <h2 style="margin-left:200px;color: rgb(31, 157, 199);">
-                <u>Add Employee Payroll UI/UX Design</u>
+                <u>Update Employee Payroll UI/UX Design</u>
             </h2>    
        </div>
         <div class="formDiv">
@@ -57,7 +57,7 @@
                     <option value="70,000">70000</option><br>
                 </select><br><br><br>
                 <label for="startdate">Start Date</label>
-                <select name="startdate" class="formDate">
+                <select name="startdate" class="formDate" id="day">
                     <option value="">Day</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -91,7 +91,7 @@
                     <option value="30">30</option>
                     <option value="31">31</option>
                 </select>
-                <select name="startdate" class="formDate">
+                <select name="startdate" class="formDate" id="month">
                     <option value="">Month</option>
                     <option value="Jan">January</option>
                     <option value="Feb">February</option>
@@ -106,7 +106,7 @@
                     <option value="Nov">November</option>
                     <option value="Dec">December</option>
                 </select>
-                <select name="startdate" class="formDate">
+                <select name="startdate" class="formDate" id="year">
                     <option value="">Year</option>
                     <option value="2015">2015</option>
                     <option value="2016">2016</option>
@@ -121,7 +121,7 @@
                 </select><br><br>
                 <div class="notediv" style="display: flex;align-items: center;">
                     <label for="note">Notes</label>
-                    <textarea name="note" class="formNote"></textarea><br><br>
+                    <textarea name="note" class="formNote" id="notes"></textarea><br><br>
                 </div>
                     <button class="clbutton" id="cancelButton"><a href="/pages/dashboard.html" style="text-decoration: none;color: black;margin: 0;height: 100%;width: 100%;">Cancel</a></button>
                    <button class="clbutton" type="submit">Submit</button>
@@ -136,3 +136,5 @@
     <script src="/js/script.js"></script>
 </body>
 </html>
+
+
