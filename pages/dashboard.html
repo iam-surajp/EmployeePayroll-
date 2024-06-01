@@ -60,15 +60,6 @@
 
         <!-- Link to the external JavaScript file -->
         <script src="/js/script.js"></script>
-        <script>
-            $(document).ready(function() {
-                // Add event listener for edit buttons
-                $('.edit-row').on('click', function(e) {
-                    e.preventDefault();
-                    const id = $(this).data('id');
-                    window.location.href = `/pages/edit_form.html?id=${id}`; // Redirect to edit_form.html with the employee ID as query parameter
-                });
-            });
-        </script>
+        <script src="/js/dashboard.js"></script>
 </body>
 </html>

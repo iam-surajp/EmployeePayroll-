@@ -2,49 +2,6 @@ $(document).ready(function() {
     // Fetch and populate employee data on page load
     fetchEmployeeData();
 
-    // Handle form submission
-    $('#myForm').on('submit', function(e) {
-        e.preventDefault(); // Prevent default form submission
-
-        // Collect form data
-        var formData = {
-            name: $('#name').val(),
-            profile_pic: $('input[name="profile_pic"]:checked').val(), // Get value of checked radio button
-            gender: $('input[name="gender"]:checked').val(),
-            department: [],
-            salary: $('select[name="salary"]').val(),
-            startdate: {
-                day: $('select[name="startdate"]').eq(0).val(),
-                month: $('select[name="startdate"]').eq(1).val(),
-                year: $('select[name="startdate"]').eq(2).val(),
-            },
-            note: $('textarea[name="note"]').val(),
-        };
-
-        // Get all checked departments
-        $('input[name="department"]:checked').each(function() {
-            formData.department.push($(this).val());
-        });
-
-        // Send data to the JSON server
-        $.ajax({
-            url: 'http://localhost:3000/employees', // URL of JSON server endpoint
-            type: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify(formData),
-            success: function(response) {
-                console.log('Data successfully sent to the server:', response);
-                alert('Employee added successfully');
-                fetchEmployeeData(); // Refresh the employee table
-                $('#myForm')[0].reset(); // Reset the form
-            },
-            error: function(error) {
-                console.error('Error sending data:', error);
-                alert('Error adding employee');
-            }
-        });
-    });
-
     // Function to fetch data from the server and populate the table
     function fetchEmployeeData() {
         $.ajax({
@@ -73,10 +30,10 @@ $(document).ready(function() {
                     <td>${employee.gender}</td>
                     <td>${employee.department.map(dept => `<span class="tag">${dept}</span>`).join(' ')}</td>
                     <td>₹ ${employee.salary}</td>
-                    <td>${employee.startdate.day} ${employee.startdate.month} ${employee.startdate.year}</td>
+                    <td>${employee.date}</td>
                     <td>
                         <span><a href="" class="delete-row" data-id="${employee.id}"><img src="/assets/delet.png" alt=""></a></span>
-                        <span><a href="/pages/payrollForm.html?id=${employee.id}" class="edit-row"><img src="/assets/edit.png" alt=""></a></span>
+                        <span><a href="/pages/edit_form.html?id=${employee.id}" class="edit-row"><img src="/assets/edit.png" alt=""></a></span>
                     </td>
                 </tr>
             `;
@@ -89,6 +46,13 @@ $(document).ready(function() {
             const id = $(this).data('id');
             deleteEmployee(id);
         });
+
+        // // Add event listener for edit buttons
+        // $('.edit-row').on('click', function(e) {
+        //     e.preventDefault();
+        //     const id = $(this).data('id');
+        //     window.location.href = `/pages/edit_form.html?id=${id}`; // Redirect to edit_form.html with the employee ID as query parameter
+        // });
     }
 
     // Function to delete an employee

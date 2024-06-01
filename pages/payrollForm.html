@@ -57,8 +57,8 @@
                     <option value="70,000">70000</option><br>
                 </select><br><br><br>
                 <label for="startdate">Start Date</label>
-                <select name="startdate" class="formDate">
-                    <option value="">Day</option>
+                <select name="startdate" class="formDate" id="day">
+                    <option value="" disabled selected>Day</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -91,23 +91,23 @@
                     <option value="30">30</option>
                     <option value="31">31</option>
                 </select>
-                <select name="startdate" class="formDate">
-                    <option value="">Month</option>
-                    <option value="Jan">January</option>
-                    <option value="Feb">February</option>
-                    <option value="Mar">March</option>
-                    <option value="Apr">April</option>
+                <select name="startdate" class="formDate" id="month">
+                    <option value="" disabled selected>Month</option>
+                    <option value="January">January</option>
+                    <option value="Febuary">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
                     <option value="May">May</option>
-                    <option value="Jun">June</option>
-                    <option value="Jul">July</option>
-                    <option value="Aug">August</option>
-                    <option value="Sept">September</option>
-                    <option value="Oct">October</option>
-                    <option value="Nov">November</option>
-                    <option value="Dec">December</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
                 </select>
-                <select name="startdate" class="formDate">
-                    <option value="">Year</option>
+                <select name="startdate" class="formDate" id="year">
+                    <option value="" disabled selected>Year</option>
                     <option value="2015">2015</option>
                     <option value="2016">2016</option>
                     <option value="2017">2017</option>
@@ -120,11 +120,11 @@
                     <option value="2024">2024</option>
                 </select><br><br>
                 <div class="notediv" style="display: flex;align-items: center;">
-                    <label for="note">Notes</label>
-                    <textarea name="note" class="formNote"></textarea><br><br>
+                    <label for="notes">Notes</label>
+                    <textarea name="notes" id="notes" class="formNote"></textarea><br><br>
                 </div>
-                    <button class="clbutton" id="cancelButton"><a href="/pages/dashboard.html" style="text-decoration: none;color: black;margin: 0;height: 100%;width: 100%;">Cancel</a></button>
-                   <button class="clbutton" type="submit">Submit</button>
+                    <button class="clbutton" id="cancelButton" type="button"><a href="/pages/dashboard.html" style="text-decoration: none;color: black;margin: 0;height: 100%;width: 100%;">Cancel</a></button>
+                   <button class="clbutton" id="submitButton" type="submit">Submit</button>
                    <button class="clbutton" type="reset" id="resetButton"><a href="/pages/payrollForm.html" style="text-decoration: none;color: black;margin: 0;"></a>Reset</button>
                 
                 </div>
@@ -133,6 +133,6 @@
     </div>
 
     <!-- Adding script file -->
-    <script src="/js/script.js"></script>
+    <script src="/js/payrollForm.js"></script>
 </body>
 </html>

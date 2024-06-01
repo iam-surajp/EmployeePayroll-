@@ -1,34 +1,16 @@
 {
   "employees": [
     {
-      "id": "3538",
-      "name": "Suraj Phakade",
-      "profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm47XQvdo3l5cTpQjf2a5yNm7DsW4aENh65hKkf7gMJA&s",
+      "name": "suraj",
+      "profile_pic": "/assets/images.jpg",
       "gender": "Female",
       "department": [
-        "Sales"
+        "Hr"
       ],
-      "salary": "30000",
-      "startdate": {
-        "day": "17",
-        "month": "Nov",
-        "year": "2018"
-      },
-      "note": "good employee"
-    },
-    {
-      "id": "d6c3",
-      "name": "ggfjfjf",
-      "profile_pic": "/assets/images (2).jpg",
-      "gender": "Female",
-      "department": [],
-      "salary": "40,000",
-      "startdate": {
-        "day": "19",
-        "month": "Oct",
-        "year": "2021"
-      },
-      "note": "fhtytfj"
+      "salary": "20,000",
+      "date": "29 December 2023",
+      "notes": "sss",
+      "id": "dadc"
     }
   ]
 }
