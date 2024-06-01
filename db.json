@@ -11,6 +11,31 @@
       "date": "29 December 2023",
       "notes": "sss",
       "id": "dadc"
+    },
+    {
+      "name": "pramod",
+      "profile_pic": "/assets/images (1).jpg",
+      "gender": "Male",
+      "department": [
+        "Hr",
+        "Sales"
+      ],
+      "salary": "30,000",
+      "date": "17 November 2023",
+      "notes": "good employee",
+      "id": "c18c"
+    },
+    {
+      "name": "akash shinde",
+      "profile_pic": "/assets/images (1).jpg",
+      "gender": "Male",
+      "department": [
+        "Engineer"
+      ],
+      "salary": "30,000",
+      "date": "20 August 2021",
+      "notes": "night shift employee e",
+      "id": "7521"
     }
   ]
 }

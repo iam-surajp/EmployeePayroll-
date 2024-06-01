@@ -55,6 +55,24 @@ $(document).ready(function() {
         // });
     }
 
+    $(document).on('click', '.search', function () {
+        var searchText = $('#searchInput').val().toLowerCase();
+        $.ajax({
+            url: 'http://localhost:3000/employees',
+            type: 'GET',
+            success: function (data) {
+                var filteredEmployees = data.filter(user => 
+                    user.name.toLowerCase().includes(searchText) ||
+                    user.gender.toLowerCase().includes(searchText) ||
+                    user.date.toLowerCase().includes(searchText) ||
+                    user.salary.toLowerCase().includes(searchText) ||
+                    user.department.some(dept => dept.toLowerCase().includes(searchText))
+                );
+                populateEmployeeTable(filteredEmployees);
+            }
+        });
+    });
+
     // Function to delete an employee
     function deleteEmployee(id) {
         $.ajax({
@@ -62,7 +80,7 @@ $(document).ready(function() {
             type: 'DELETE',
             success: function(response) {
                 console.log('Employee successfully deleted:', response);
-                fetchEmployeeData(); // Refresh the table
+                // fetchEmployeeData(); // Refresh the table
             },
             error: function(error) {
                 console.error('Error deleting employee:', error);

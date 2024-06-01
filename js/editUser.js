@@ -89,8 +89,8 @@ $(document).ready(function() {
             contentType: 'application/json',
             data: JSON.stringify(formData),
             success: function (response) {
+                window.location.href = './dashboard.html';
                 alert('Form submitted successfully!');
-                window.location.href = '/pages/dashboard.html';
             },
             error: function (error) {
                 console.log('Error:', error);

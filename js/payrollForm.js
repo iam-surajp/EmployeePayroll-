@@ -30,9 +30,10 @@ $(document).ready(function() {
             data: JSON.stringify(formData),
             success: function(response) {
                 console.log('Data successfully sent to the server:', response);
+                // fetchEmployeeData(); // Refresh the employee table
+                // $('#myForm')[0].reset(); // Reset the form
+                window.location.href = './dashboard.html';
                 alert('Employee added successfully');
-                fetchEmployeeData(); // Refresh the employee table
-                $('#myForm')[0].reset(); // Reset the form
             },
             error: function(error) {
                 console.error('Error sending data:', error);
