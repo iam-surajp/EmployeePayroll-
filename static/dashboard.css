@@ -147,3 +147,8 @@ color: white;
 font-weight: 500;
 font-size: small;
 }
+
+
+button, input[type="text"], input[type="radio"], input[type="checkbox"], select, textarea,a {
+    cursor: pointer;
+}

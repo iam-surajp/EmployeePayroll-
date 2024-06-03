@@ -1,9 +1,9 @@
 
 $(document).ready(function() {
 
-    // Handle form submission
+    //form submission
     $('#myForm').on('submit', function(e) {
-        e.preventDefault(); // Prevent default form submission
+        e.preventDefault(); 
 
         // Collect form data
         var formData = {
@@ -22,6 +22,50 @@ $(document).ready(function() {
             formData.department.push($(this).val());
         });
 
+
+        // Validate form data
+        var isValid = true;
+        if (!formData.name) {
+            $('#nameError').text('Name is required');
+            isValid = false;
+        } else {
+            $('#nameError').text('');
+        }
+        if (!formData.profile_pic) {
+            $('#profilePicError').text('Profile photo is required');
+            isValid = false;
+        } else {
+            $('#profilePicError').text('');
+        }
+        if (!formData.gender) {
+            $('#genderError').text('Gender is required');
+            isValid = false;
+        } else {
+            $('#genderError').text('');
+        }
+        if (formData.department.length === 0) {
+            $('#departmentError').text('At least one department must be selected');
+            isValid = false;
+        } else {
+            $('#departmentError').text('');
+        }
+        if (!formData.salary) {
+            $('#salaryError').text('Salary is required');
+            isValid = false;
+        } else {
+            $('#salaryError').text('');
+        }
+        if (!$('#day').val() || !$('#month').val() || !$('#year').val()) {
+            $('#dateError').text('Complete start date is required');
+            isValid = false;
+        } else {
+            $('#dateError').text('');
+        }
+
+        if (!isValid) {
+            return; 
+        }
+
         // Send data to the JSON server
         $.ajax({
             url: 'http://localhost:3000/employees', // URL of JSON server endpoint
@@ -30,8 +74,6 @@ $(document).ready(function() {
             data: JSON.stringify(formData),
             success: function(response) {
                 console.log('Data successfully sent to the server:', response);
-                // fetchEmployeeData(); // Refresh the employee table
-                // $('#myForm')[0].reset(); // Reset the form
                 window.location.href = './dashboard.html';
                 alert('Employee added successfully');
             },
@@ -42,4 +84,13 @@ $(document).ready(function() {
         });
     });
     
+});
+
+$('#resetButton').on('click', function() {
+    $('#myForm')[0].reset(); 
+    $('.error').text(''); 
+});
+
+$('#cancelButton').on('click', function() {
+    window.location.href = '/pages/dashboard.html'; 
 });

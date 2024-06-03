@@ -88,3 +88,7 @@ $(document).ready(function() {
         });
     }
 });
+
+$('.add-user').on('click', function() {
+    window.location.href = '/pages/payrollForm.html'; 
+});

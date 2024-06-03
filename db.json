@@ -2,8 +2,8 @@
   "employees": [
     {
       "name": "suraj",
-      "profile_pic": "/assets/images.jpg",
-      "gender": "Female",
+      "profile_pic": "/assets/images (1).jpg",
+      "gender": "Male",
       "department": [
         "Hr"
       ],
@@ -26,16 +26,29 @@
       "id": "c18c"
     },
     {
-      "name": "akash shinde",
+      "name": "akash patil",
       "profile_pic": "/assets/images (1).jpg",
       "gender": "Male",
       "department": [
-        "Engineer"
+        "Sales",
+        "Finance"
       ],
-      "salary": "30,000",
-      "date": "20 August 2021",
-      "notes": "night shift employee e",
-      "id": "7521"
+      "salary": "20000",
+      "date": "18 December 2019",
+      "notes": "",
+      "id": "6f19"
+    },
+    {
+      "name": "sddf",
+      "profile_pic": "/assets/images.jpg",
+      "gender": "Female",
+      "department": [
+        "Hr"
+      ],
+      "salary": "20,000",
+      "date": "19 September 2021",
+      "notes": "",
+      "id": "db3c"
     }
   ]
 }

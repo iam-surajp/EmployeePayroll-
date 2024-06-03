@@ -29,26 +29,51 @@ $(document).ready(function() {
             formData.department.push($(this).val());
         });
 
-        $.ajax({
-            url: 'http://localhost:3000/employees',
-            type: 'GET',
-            success: function (data) {
-                var duplicate = false;
-                data.forEach(function (user) {
-                    if (user.name === formData.name && user.gender === formData.gender) {
-                        duplicate = true;
-                        return false; 
-                    }
-                });
+        // Validate form data
+        var isValid = true;
+        if (!formData.name) {
+            $('#nameError').text('Name is required');
+            isValid = false;
+        } else {
+            $('#nameError').text('');
+        }
+        if (!formData.profile_pic) {
+            $('#profilePicError').text('Profile photo is required');
+            isValid = false;
+        } else {
+            $('#profilePicError').text('');
+        }
+        if (!formData.gender) {
+            $('#genderError').text('Gender is required');
+            isValid = false;
+        } else {
+            $('#genderError').text('');
+        }
+        if (formData.department.length === 0) {
+            $('#departmentError').text('At least one department must be selected');
+            isValid = false;
+        } else {
+            $('#departmentError').text('');
+        }
+        if (!formData.salary) {
+            $('#salaryError').text('Salary is required');
+            isValid = false;
+        } else {
+            $('#salaryError').text('');
+        }
+        if (!$('#day').val() || !$('#month').val() || !$('#year').val()) {
+            $('#dateError').text('Complete start date is required');
+            isValid = false;
+        } else {
+            $('#dateError').text('');
+        }
 
-                submitForm(formData, userId);
+        if (!isValid) {
+            return; // If form is not valid, do not submit
+        }
 
-            },
-            error: function (error) {
-                console.log('Error:', error);
-                alert('Error occurred while submitting the form!');
-            }
-        });
+        submitForm(formData, userId);
+
     });
 
     function fetchUser(userId) {
@@ -90,12 +115,22 @@ $(document).ready(function() {
             data: JSON.stringify(formData),
             success: function (response) {
                 window.location.href = './dashboard.html';
-                alert('Form submitted successfully!');
+                alert('Employee updated successfully!');
             },
             error: function (error) {
                 console.log('Error:', error);
-                alert('Error occurred while submitting the form!');
+                alert('Error occurred while updating the form!');
             }
         });
     }
+});
+
+
+$('#resetButton').on('click', function() {
+    $('#myForm')[0].reset(); 
+    $('.error').text(''); 
+});
+
+$('#cancelButton').on('click', function() {
+    window.location.href = '/pages/dashboard.html'; 
 });

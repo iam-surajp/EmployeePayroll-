@@ -6,6 +6,12 @@
     <link rel="stylesheet" href="/static/payrollForm.css">
     <title>Add employee</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        #departmentError{
+            position: absolute;
+            left: 40px;
+        }
+    </style>
 </head>
 <body>
     <div class="maindiv">
@@ -22,6 +28,8 @@
                 <h3>Employee Payroll Form</h3><br>
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" class="formEmpName">
+                <br>
+                <span class="error" id="nameError"></span>
                 <br><br>
                 <div class="profInp" style="display: flex;align-items: center;">
                 <label for="profile_pic">Profile Photo</label>
@@ -33,29 +41,45 @@
                 <img src="/assets/images (1).jpg" alt="img" id="img3" class="prof_pic">  
                 <input type="radio" name="profile_pic" id="fourth_img" value="/assets/images (2).jpg">
                 <img src="/assets/images (2).jpg" alt="img" id="img4" class="prof_pic">
+                
                 </div>
+                <span class="error" id="profilePicError"></span>
                 <br><br>
 
                 <label for="gender">Gender</label>
                 <input type="radio" name="gender" value="Male">Male
                 <input type="radio" name="gender" value="Female">Female
+                <br>
+                <span class="error" id="genderError"></span>
                 <br><br>
-                <label for="department">Department</label>
+                <div class="dept-div" style="display: flex;align-items: center;">
+                <label for="department" style="position: relative;">Department</label> 
+                <div style="position: absolute;left:255px;">         
                 <input type="checkbox" name="department" value="Hr" class="formDept"/>Hr
                 <input type="checkbox" name="department" value="Sales" class="formDept"/>Sales
                 <input type="checkbox" name="department" value="Finance" class="formDept"/>Finance
                 <input type="checkbox" name="department" value="Engineer" class="formDept"/>Engineer
-                <input type="checkbox" name="department" value="Others" class="formDept"/>Others<br><br>
+                <input type="checkbox" name="department" value="Others" class="formDept"/>Others
+                <br>
+                <span class="error" id="departmentError"></span>
+                </div>
+                
+                <br>         
+                </div>
+                <br><br>
                 <label for="salary">Salary</label>
                 <select name="salary" class="formSalary">
-                    <option value="">Select Salary</option><br><br>
-                    <option value="20,000">20000</option><br>
-                    <option value="30,000">30000</option><br>
-                    <option value="40,000">40000</option><br>
-                    <option value="50,000">50000</option><br>
-                    <option value="60,000">60000</option><br>
-                    <option value="70,000">70000</option><br>
-                </select><br><br><br>
+                    <option value="">Select Salary</option>
+                    <option value="20,000">20000</option>
+                    <option value="30,000">30000</option>
+                    <option value="40,000">40000</option>
+                    <option value="50,000">50000</option>
+                    <option value="60,000">60000</option>
+                    <option value="70,000">70000</option>
+                </select>
+                <br>
+                <span class="error" id="salaryError"></span>
+                <br><br>
                 <label for="startdate">Start Date</label>
                 <select name="startdate" class="formDate" id="day">
                     <option value="" disabled selected>Day</option>
@@ -118,14 +142,18 @@
                     <option value="2022">2022</option>
                     <option value="2023">2023</option>
                     <option value="2024">2024</option>
-                </select><br><br>
+                </select>
+                <br>
+                <span class="error" id="dateError"></span>
+                <br><br>
                 <div class="notediv" style="display: flex;align-items: center;">
                     <label for="notes">Notes</label>
-                    <textarea name="notes" id="notes" class="formNote"></textarea><br><br>
+                    <textarea name="notes" id="notes" class="formNote"></textarea>
+                    <br><br>
                 </div>
-                    <button class="clbutton" id="cancelButton" type="button"><a href="/pages/dashboard.html" style="text-decoration: none;color: black;margin: 0;height: 100%;width: 100%;">Cancel</a></button>
+                    <button class="clbutton" id="cancelButton" type="button">Cancel</button>
                    <button class="clbutton" id="submitButton" type="submit">Submit</button>
-                   <button class="clbutton" type="reset" id="resetButton"><a href="/pages/payrollForm.html" style="text-decoration: none;color: black;margin: 0;"></a>Reset</button>
+                   <button class="clbutton" type="reset" id="resetButton">Reset</button>
                 
                 </div>
             </form>

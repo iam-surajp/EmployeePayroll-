@@ -4,14 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/payrollForm.css">
-    <title>Update Employee</title>
+    <title>Update employee</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        #departmentError{
+            position: absolute;
+            left: 40px;
+        }
+    </style>
 </head>
 <body>
     <div class="maindiv">
        <div class="title-div" style="display: flex;margin-top: 10px;"> 
             <img src="/assets/empLogo.jpg" alt="EmpLogo" style="width: 40px;height: 35px;margin-top: 20px;margin-left: 50px;">
-            <h4><span style="color: #739a36;">EMPLOYEE</span><br><span>PAYROLL</span></h4>   
+            <h4 ><span style="color: #739a36;">EMPLOYEE</span><br>
+                <span>PAYROLL</span></h4>   
             <h2 style="margin-left:200px;color: rgb(31, 157, 199);">
                 <u>Update Employee Payroll UI/UX Design</u>
             </h2>    
@@ -20,30 +27,48 @@
             <form id="myForm">
                 <h3>Employee Payroll Form</h3><br>
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" class="formEmpName"><br><br>
+                <input type="text" id="name" name="name" class="formEmpName">
+                <br>
+                <span class="error" id="nameError"></span>
+                <br><br>
                 <div class="profInp" style="display: flex;align-items: center;">
-                    <label for="profile_pic">Profile Photo</label>
-                    <input type="radio" name="profile_pic" id="first_img" value="/assets/dentalia-demo.jpg">
-                    <img src="/assets/dentalia-demo.jpg" alt="img" id="img1" class="prof_pic">
-                    <input type="radio" name="profile_pic" id="second_img" value="/assets/images.jpg">
-                    <img src="/assets/images.jpg" alt="img" id="img2" class="prof_pic">
-                    <input type="radio" name="profile_pic" id="third_img" value="/assets/images (1).jpg">
-                    <img src="/assets/images (1).jpg" alt="img" id="img3" class="prof_pic">  
-                    <input type="radio" name="profile_pic" id="fourth_img" value="/assets/images (2).jpg">
-                    <img src="/assets/images (2).jpg" alt="img" id="img4" class="prof_pic">
-                </div><br><br>
+                <label for="profile_pic">Profile Photo</label>
+                <input type="radio" name="profile_pic" id="first_img" value="/assets/dentalia-demo.jpg">
+                <img src="/assets/dentalia-demo.jpg" alt="img" id="img1" class="prof_pic">
+                <input type="radio" name="profile_pic" id="second_img" value="/assets/images.jpg">
+                <img src="/assets/images.jpg" alt="img" id="img2" class="prof_pic">
+                <input type="radio" name="profile_pic" id="third_img" value="/assets/images (1).jpg">
+                <img src="/assets/images (1).jpg" alt="img" id="img3" class="prof_pic">  
+                <input type="radio" name="profile_pic" id="fourth_img" value="/assets/images (2).jpg">
+                <img src="/assets/images (2).jpg" alt="img" id="img4" class="prof_pic">
+                
+                </div>
+                <span class="error" id="profilePicError"></span>
+                <br><br>
 
                 <label for="gender">Gender</label>
                 <input type="radio" name="gender" value="Male">Male
-                <input type="radio" name="gender" value="Female">Female<br><br>
-                <label for="department">Department</label>
+                <input type="radio" name="gender" value="Female">Female
+                <br>
+                <span class="error" id="genderError"></span>
+                <br><br>
+                <div class="dept-div" style="display: flex;align-items: center;">
+                <label for="department" style="position: relative;">Department</label> 
+                <div style="position: absolute;left:255px;">         
                 <input type="checkbox" name="department" value="Hr" class="formDept"/>Hr
                 <input type="checkbox" name="department" value="Sales" class="formDept"/>Sales
                 <input type="checkbox" name="department" value="Finance" class="formDept"/>Finance
                 <input type="checkbox" name="department" value="Engineer" class="formDept"/>Engineer
-                <input type="checkbox" name="department" value="Others" class="formDept"/>Others<br><br>
+                <input type="checkbox" name="department" value="Others" class="formDept"/>Others
+                <br>
+                <span class="error" id="departmentError"></span>
+                </div>
+                
+                <br>         
+                </div>
+                <br><br>
                 <label for="salary">Salary</label>
-                <select id="salary" class="formSalary">
+                <select name="salary" id="salary" class="formSalary">
                     <option value="">Select Salary</option>
                     <option value="20,000">20000</option>
                     <option value="30,000">30000</option>
@@ -51,11 +76,13 @@
                     <option value="50,000">50000</option>
                     <option value="60,000">60000</option>
                     <option value="70,000">70000</option>
-                </select><br><br><br>
+                </select>
+                <br>
+                <span class="error" id="salaryError"></span>
+                <br><br>
                 <label for="startdate">Start Date</label>
                 <select name="startdate" class="formDate" id="day">
                     <option value="" disabled selected>Day</option>
-                    <!-- Add day options here -->
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -90,9 +117,8 @@
                 </select>
                 <select name="startdate" class="formDate" id="month">
                     <option value="" disabled selected>Month</option>
-                    <!-- Add month options here -->
                     <option value="January">January</option>
-                    <option value="February">February</option>
+                    <option value="Febuary">February</option>
                     <option value="March">March</option>
                     <option value="April">April</option>
                     <option value="May">May</option>
@@ -106,7 +132,6 @@
                 </select>
                 <select name="startdate" class="formDate" id="year">
                     <option value="" disabled selected>Year</option>
-                    <!-- Add year options here -->
                     <option value="2015">2015</option>
                     <option value="2016">2016</option>
                     <option value="2017">2017</option>
@@ -117,14 +142,18 @@
                     <option value="2022">2022</option>
                     <option value="2023">2023</option>
                     <option value="2024">2024</option>
-                </select><br><br>
+                </select>
+                <br>
+                <span class="error" id="dateError"></span>
+                <br><br>
                 <div class="notediv" style="display: flex;align-items: center;">
                     <label for="notes">Notes</label>
-                    <textarea name="notes" class="formNote" id="notes"></textarea><br><br>
+                    <textarea name="notes" id="notes" class="formNote"></textarea>
+                    <br><br>
                 </div>
-                <button class="clbutton" id="cancelButton" type="button"><a href="/pages/dashboard.html" style="text-decoration: none;color: black;margin: 0;height: 100%;width: 100%;">Cancel</a></button> 
-                <button class="clbutton" type="submit">Submit</button>
-                <button class="clbutton" type="reset" id="resetButton"><a href="/pages/payrollForm.html" style="text-decoration: none;color: black;margin: 0;"></a>Reset</button>
+                    <button class="clbutton" id="cancelButton" type="button">Cancel</button>
+                   <button class="clbutton" id="submitButton" type="submit">Submit</button>
+                   <button class="clbutton" type="reset" id="resetButton">Reset</button>
                 
                 </div>
             </form>
